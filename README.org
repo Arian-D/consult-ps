@@ -1,0 +1,6 @@
+#+title: Consult ps
+
+Kill processes with Emacs.
+
+It was only tested on Linux, and it is not expected to work on Windows
+or other non-posix OSs without =pgrep= and =kill=.
