@@ -1,21 +1,20 @@
 (require 'consult)
 
-(defun read-process ()
-  "Use `pgrep' to select process through consult"
+(defun consult-ps ()
+  "Use `pgrep' to select process through consult and return a string
+with the PID followed by the path."
   (interactive)
   (consult--read
    (consult--async-command
-       (lambda (x) (list "pgrep" "-a" x))
-     :prompt "Process: "
+       (apply-partially #'list "pgrep" "-a")
+     :prompt "Process name: "
      :require-match t)))
 
 (defun consult-pkill ()
   "Run `pkill' on a process"
   (interactive)
-  (let* ((process (read-process))
+  (let* ((process (consult-ps))
          (process-info (split-string process))
          (process-id (car process-info))
          (kill-command (format "kill %s" process-id)))
-    (pp process-id)
-    (pp kill-command)
     (shell-command kill-command)))
