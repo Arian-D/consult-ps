@@ -1,6 +1,18 @@
 #+title: Consult ps
+#+startup: fold
 
-Kill processes with Emacs.
+Manage system processes with Emacs.
 
+* Installation using straight
+First, ensure [[https://github.com/minad/consult][consult]] is installed. Then,
+#+begin_src emacs-lisp
+  (use-package consult-ps
+    :straight (consult-ps :host github :repo "Arian-D/consult-ps"))
+#+end_src
+
+* Functions
+- =M-x consult-pkill= :: Kill a process
+
+* Disclaimer
 It was only tested on Linux, and it is not expected to work on Windows
 or other non-posix OSs without =pgrep= and =kill=.
