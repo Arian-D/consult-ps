@@ -18,3 +18,5 @@ with the PID followed by the path."
          (process-id (car process-info))
          (kill-command (format "kill %s" process-id)))
     (shell-command kill-command)))
+
+(provide 'consult-ps)
