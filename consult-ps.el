@@ -6,9 +6,9 @@ with the PID followed by the path."
   (interactive)
   (consult--read
    (consult--async-command
-       (apply-partially #'list "pgrep" "-a")
-     :prompt "Process name: "
-     :require-match t)))
+       (apply-partially #'list "pgrep" "-a"))
+   :prompt "Process name: "
+   :require-match t))
 
 (defun consult-pkill ()
   "Run `pkill' on a process"
