@@ -7,7 +7,8 @@ Manage system processes with Emacs.
 First, ensure [[https://github.com/minad/consult][consult]] is installed. Then,
 #+begin_src emacs-lisp
   (use-package consult-ps
-    :straight (consult-ps :host github :repo "Arian-D/consult-ps"))
+    :after consult
+    :straight (:host github :repo "Arian-D/consult-ps"))
 #+end_src
 
 * Functions
@@ -16,3 +17,5 @@ First, ensure [[https://github.com/minad/consult][consult]] is installed. Then,
 * Disclaimer
 It was only tested on Linux, and it is not expected to work on Windows
 or other non-posix OSs without =pgrep= and =kill=.
+
+Make an issue if things don't work right.
